@@ -35,7 +35,7 @@
     #location
         location=$(curl -s https://freegeoip.app/json/ | jq -r ".country_name")
     #Ip Address
-        ip=$(curl https://ip-fast.com/api/ip/)
+        ip=$(curl -s https://ip-fast.com/api/ip/)
     #City
         city=$(curl -s https://freegeoip.app/json/ | jq -r ".city")
     #Zip/Postal
