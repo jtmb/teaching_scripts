@@ -15,6 +15,7 @@
     echo
 
 # User Input
+        # Collects User Manual Info, writes to variable
     #first name
         echo What is your first name?
         read -s first
@@ -30,6 +31,7 @@
 
 
 # Collected information
+        #The Script makes API calls to to get results based on IP address, writes to variables.
     #location
         location=$(curl -s https://freegeoip.app/json/ | jq -r ".country_name")
     #Ip Address
