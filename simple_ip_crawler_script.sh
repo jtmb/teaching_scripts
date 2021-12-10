@@ -1,4 +1,4 @@
-#simple shell script
+#simple IP crawler shell script
 
 # clears console
     clear
@@ -62,7 +62,7 @@
 # clears console
     clear
 
-# Display output
+# Display output from generated variables
     echo
     echo --------------------
     echo Here is the info you gave me:
