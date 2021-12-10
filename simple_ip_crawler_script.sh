@@ -26,7 +26,7 @@
         echo What is your age?
         read -s age
     #email Address
-        echo What is your postal email address?
+        echo What is your email address?
         read -s email
 
 
