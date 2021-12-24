@@ -1,6 +1,6 @@
 #!/bin/bash
 
-# updates and installs OS updates (linux debian)
+# Updates and installs OS (linux debian)
 
 apt-get update
 apt-get upgrade -y
