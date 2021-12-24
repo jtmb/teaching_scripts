@@ -5,8 +5,6 @@ clear
 echo
 echo Fetching and Loading Results...
 
-clear
-
 # Collected geoIP information
         #The Script makes API calls to to get results based on IP address, writes to variables.
         #location
@@ -31,13 +29,13 @@ clear
                 wdate=$(date --date="-7 day" +%Y-%m-%d)
     
     #covid cases for today
-        cases=$(curl -s --location --request GET 'https://api.covid19api.com/country/'$location'/status/confirmed/live?from='$ydate'T00:00:00Z&to='$tdate'T12:00:00Z' | jq '.[] | .Cases')
-
+        
 
 # Covid cases compared weekly new confirmed (geoIP)
-        newconfirmed=$(curl -s --location --request GET 'https://api.covid19api.com/summary'| jq '.Countries[] | select(.Country | contains("Canada"))' | jq .NewConfirmed)
-        newdeaths=$(curl -s --location --request GET 'https://api.covid19api.com/summary'| jq '.Countries[] | select(.Country | contains("Canada"))' | jq .NewDeaths)
-        totaldeaths=$(curl -s --location --request GET 'https://api.covid19api.com/summary'| jq '.Countries[] | select(.Country | contains("Canada"))' | jq .TotalDeaths)
+        newconfirmed=$(curl -s --location --request GET 'https://api.covid19api.com/summary'| jq '.Countries[] | select(.Country | contains("'$location'"))' | jq .NewConfirmed)
+        newdeaths=$(curl -s --location --request GET 'https://api.covid19api.com/summary'| jq '.Countries[] | select(.Country | contains("'$location'"))' | jq .NewDeaths)
+        totaldeaths=$(curl -s --location --request GET 'https://api.covid19api.com/summary'| jq '.Countries[] | select(.Country | contains("'$location'"))' | jq .TotalDeaths)
+        cases=$(curl -s --location --request GET 'https://api.covid19api.com/summary'| jq '.Countries[] | select(.Country | contains("'$location'"))' | jq .TotalConfirmed)
 
 
 # Covid cases compared weekly new confirmed (Portugal)
