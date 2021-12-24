@@ -7,7 +7,7 @@ echo Fetching and Loading Results...
 
 clear
 
-    # Collected information
+# Collected geoIP information
         #The Script makes API calls to to get results based on IP address, writes to variables.
         #location
             location=$(curl -s https://freegeoip.app/json/ | jq -r ".country_name")
@@ -33,20 +33,21 @@ clear
     #covid cases for today
         cases=$(curl -s --location --request GET 'https://api.covid19api.com/country/'$location'/status/confirmed/live?from='$ydate'T00:00:00Z&to='$tdate'T12:00:00Z' | jq '.[] | .Cases')
 
-    # Covid cases compared weekly new confirmed (location IP)
+
+# Covid cases compared weekly new confirmed (geoIP)
         newconfirmed=$(curl -s --location --request GET 'https://api.covid19api.com/summary'| jq '.Countries[] | select(.Country | contains("Canada"))' | jq .NewConfirmed)
         newdeaths=$(curl -s --location --request GET 'https://api.covid19api.com/summary'| jq '.Countries[] | select(.Country | contains("Canada"))' | jq .NewDeaths)
         totaldeaths=$(curl -s --location --request GET 'https://api.covid19api.com/summary'| jq '.Countries[] | select(.Country | contains("Canada"))' | jq .TotalDeaths)
 
 
-    # Covid cases compared weekly new confirmed (Portugal)
+# Covid cases compared weekly new confirmed (Portugal)
         pnewconfirmed=$(curl -s --location --request GET 'https://api.covid19api.com/summary'| jq '.Countries[] | select(.Country | contains("Portugal"))' | jq .NewConfirmed)
         pnewdeaths=$(curl -s --location --request GET 'https://api.covid19api.com/summary'| jq '.Countries[] | select(.Country | contains("Portugal"))' | jq .NewDeaths)
         ptotaldeaths=$(curl -s --location --request GET 'https://api.covid19api.com/summary'| jq '.Countries[] | select(.Country | contains("Portugal"))' | jq .TotalDeaths)
         pcases=$(curl -s --location --request GET 'https://api.covid19api.com/summary'| jq '.Countries[] | select(.Country | contains("Portugal"))' | jq .TotalConfirmed)
 
 
-
+# Output
     echo
     echo
     echo
