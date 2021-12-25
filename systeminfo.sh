@@ -21,8 +21,11 @@
 
 
     clear
+
     echo
     echo -------------------------------------------
+    echo
+    echo [SYS]
     echo
     echo System: $systemname
     echo
@@ -32,6 +35,9 @@
     echo
     echo Kernel: $kernelversion
     echo
+    echo -------------------------------------------
+    echo
+    echo [CPU]
     echo
     echo CPU $cpufamily
     echo
@@ -46,6 +52,10 @@
     echo $manufacturer
     echo
     echo $productname
+    echo
+    echo -------------------------------------------
+    echo
+    echo [Memory]
     echo
     echo $ramsize
     echo
