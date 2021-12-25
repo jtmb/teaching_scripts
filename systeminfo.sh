@@ -19,6 +19,11 @@
 
 # output
 
+
+    clear
+    echo
+    echo -------------------------------------------
+    echo
     echo System: $systemname
     echo
     echo $os
@@ -45,4 +50,5 @@
     echo
     echo Disk: $disksize
     echo
+    echo -------------------------------------------
 
