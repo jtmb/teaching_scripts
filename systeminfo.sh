@@ -26,11 +26,12 @@
     echo
     echo System: $systemname
     echo
+    echo Host Name: $hostname
+    echo
     echo $os
     echo
     echo Kernel: $kernelversion
     echo
-    echo Host Name: $hostname
     echo
     echo CPU $cpufamily
     echo
@@ -44,7 +45,7 @@
     echo
     echo $manufacturer
     echo
-    echo Product Name : $productname
+    echo $productname
     echo
     echo $ramsize
     echo
